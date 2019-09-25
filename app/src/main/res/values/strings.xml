@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BatMobilApp</string>
+    <string name="title_activity_main_page">MainPage</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="anasayfa">Anasayfa</string>
+    <string name="arama">Arama</string>
+    <string name="mesaj">Mesaj</string>
+    <string name="profil">Profil</string>
+</resources>

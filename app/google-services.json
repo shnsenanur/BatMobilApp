@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "996301019587",
+    "firebase_url": "https://batmobilapp.firebaseio.com",
+    "project_id": "batmobilapp",
+    "storage_bucket": "batmobilapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996301019587:android:67c30df75be28721114576",
+        "android_client_info": {
+          "package_name": "com.example.batmobilapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996301019587-r6sn5s8vmtjf5sv6r832ajrq4kt8id2e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.batmobilapp",
+            "certificate_hash": "fa38a45f39714b472ec3c5d2536f1fce4b226ced"
+          }
+        },
+        {
+          "client_id": "996301019587-p9kd62lvo7bki0d4heah9jl32vg0qqua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhPd2MTlCf4YCyPZtimyzfD2Cx5ZFBVgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996301019587-p9kd62lvo7bki0d4heah9jl32vg0qqua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
