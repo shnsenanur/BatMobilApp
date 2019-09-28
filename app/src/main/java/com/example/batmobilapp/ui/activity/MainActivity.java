@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_user_list:
                     selectedFragment = new UserListFragment();
                     break;
-                case R.id.navigation_chat:
+                /*case R.id.navigation_chat:
                     selectedFragment = new ChatFragment();
-                    break;
+                    break;*/
                 case R.id.navigation_profile:
                     selectedFragment = new ProfileFragment();
                     break;

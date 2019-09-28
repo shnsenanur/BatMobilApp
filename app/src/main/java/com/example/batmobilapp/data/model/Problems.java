@@ -1,23 +1,24 @@
 package com.example.batmobilapp.data.model;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 public class Problems {
     private int CatID;
     private String CatName;
-    private Bitmap CatIcon;
-    private int SayAbout;
+    private Drawable CatIcon;
+    private String SayAbout;
 
     public Problems() {
     }
 
-    public Problems(int catID, String catName, Bitmap catIcon) {
+    public Problems(int catID, String catName, Drawable catIcon) {
         CatID = catID;
         CatName = catName;
         CatIcon = catIcon;
     }
 
-    public Problems(int catID, String catName, Bitmap catIcon, int sayAbout) {
+    public Problems(int catID, String catName, Drawable catIcon, String sayAbout) {
         CatID = catID;
         CatName = catName;
         CatIcon = catIcon;
@@ -40,19 +41,19 @@ public class Problems {
         CatName = catName;
     }
 
-    public Bitmap getCatIcon() {
+    public Drawable getCatIcon() {
         return CatIcon;
     }
 
-    public void setCatIcon(Bitmap catIcon) {
+    public void setCatIcon(Drawable catIcon) {
         CatIcon = catIcon;
     }
 
-    public int getSayAbout() {
+    public String getSayAbout() {
         return SayAbout;
     }
 
-    public void setSayAbout(int sayAbout) {
+    public void setSayAbout(String sayAbout) {
         SayAbout = sayAbout;
     }
 }
