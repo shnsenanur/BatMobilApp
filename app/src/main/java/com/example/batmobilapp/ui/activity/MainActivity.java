@@ -3,11 +3,11 @@ package com.example.batmobilapp.ui.activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.batmobilapp.ui.fragment.CategoryListFragment;
-import com.example.batmobilapp.ui.fragment.ProfileFragment;
 import com.example.batmobilapp.R;
-import com.example.batmobilapp.ui.fragment.EventListFragment;
+import com.example.batmobilapp.ui.fragment.CategoryListFragment;
 import com.example.batmobilapp.ui.fragment.ChatFragment;
+import com.example.batmobilapp.ui.fragment.EventListFragment;
+import com.example.batmobilapp.ui.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
