@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="388dp"
         android:layout_height="269dp"
-        tools:srcCompat="@tools:sample/avatars[11]"
+        android:src="@drawable/logo_2"
         android:visibility="visible"
         />
 

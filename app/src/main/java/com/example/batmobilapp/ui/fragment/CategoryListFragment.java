@@ -58,9 +58,10 @@ public class CategoryListFragment extends Fragment {
         categoryList.add(new Category(2,"Eğitim",sel,"560 kişi bu konu hakkında konuşuyor."));
         categoryList.add(new Category(3,"Siyaset",sena,"900 kişi bu konu hakkında konuşuyor."));
         categoryList.add(new Category(4,"Yazılım",burcu,"40 kişi bu konu hakkında konuşuyor."));
-        categoryAdapter = new CategoryAdapter(categoryList);
+        categoryAdapter = new CategoryAdapter(categoryList,getFragmentManager().beginTransaction());
         rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvCategory.setAdapter(categoryAdapter);
+
     }
 }
 
