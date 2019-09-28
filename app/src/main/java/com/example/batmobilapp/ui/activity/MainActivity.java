@@ -6,8 +6,8 @@ import android.view.MenuItem;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.ui.fragment.CategoryListFragment;
 import com.example.batmobilapp.ui.fragment.ChatFragment;
-import com.example.batmobilapp.ui.fragment.EventListFragment;
 import com.example.batmobilapp.ui.fragment.ProfileFragment;
+import com.example.batmobilapp.ui.fragment.UserListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation =  findViewById(R.id.bottom_navigation);
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(new CategoryListFragment());
 
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     selectedFragment = new CategoryListFragment();
                     break;
-                case R.id.navigation_search:
-                    selectedFragment = new EventListFragment();
+                case R.id.navigation_user_list:
+                    selectedFragment = new UserListFragment();
                     break;
                 case R.id.navigation_chat:
                     selectedFragment = new ChatFragment();
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
     private void loadFragment(Fragment fragment) {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

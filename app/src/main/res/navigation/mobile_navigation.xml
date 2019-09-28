@@ -9,13 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.example.batmobilapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_category_list" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.batmobilapp.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_event_list" />
 
     <fragment
         android:id="@+id/navigation_notifications"

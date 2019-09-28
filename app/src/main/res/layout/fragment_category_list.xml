@@ -5,8 +5,8 @@
     android:padding="20dp"
     >
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategory"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/home_ls"/>
+        android:layout_height="match_parent" />
 </LinearLayout>
