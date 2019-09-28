@@ -1,17 +1,16 @@
-package com.example.batmobilapp;
+package com.example.batmobilapp.ui.activity;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.batmobilapp.R;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     Button login_btn,newUser_btn;
     private FirebaseUser currentUser;
@@ -25,14 +24,14 @@ public class Login extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this,MainPage.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
 
         newUser_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this,SignUp.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 

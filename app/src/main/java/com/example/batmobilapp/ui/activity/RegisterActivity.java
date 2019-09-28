@@ -1,4 +1,4 @@
-package com.example.batmobilapp;
+package com.example.batmobilapp.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SignUp extends AppCompatActivity {
+import com.example.batmobilapp.R;
+
+public class RegisterActivity extends AppCompatActivity {
 
     Button signUp_btn;
     @Override
@@ -18,7 +20,7 @@ public class SignUp extends AppCompatActivity {
         signUp_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUp.this,MainPage.class));
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.batmobilapp.Objects;
+package com.example.batmobilapp.data.model;
 
 import android.graphics.Bitmap;
 
