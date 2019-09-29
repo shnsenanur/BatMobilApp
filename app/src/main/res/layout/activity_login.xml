@@ -8,28 +8,42 @@
     android:background="@color/colorPrimary">
 
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="328dp"
-        android:layout_height="553dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="25dp"
-        android:src="@drawable/logo_2" />
+ <EditText
+     android:id="@+id/mail_etext"
+     android:layout_width="204dp"
+     android:layout_height="92dp"
+     android:layout_alignParentBottom="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="300dp"
+     android:layout_marginBottom="400dp"
+     android:hint="E-mailiniz giriniz"
 
-    <TextView
-        android:layout_above="@id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="35sp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="240dp"
-        />
+
+     />
+
+ <EditText
+     android:id="@+id/password_etext"
+     android:layout_width="213dp"
+     android:layout_height="102dp"
+     android:layout_alignParentBottom="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="400dp"
+     android:layout_marginBottom="309dp"
+     android:hint="Şifrenizi giriniz"
+
+     />
+
+ <TextView
+
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="40dp"
+     android:layout_marginBottom="240dp"
+     android:text="@string/app_name"
+     android:textColor="@android:color/white"
+     android:textSize="44sp"
+     android:textStyle="bold" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

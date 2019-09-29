@@ -13,7 +13,7 @@ import com.example.batmobilapp.ui.fragment.QuestionListFragment;
 
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Category> itemsData;
     FragmentTransaction fragmentTransaction;
 
