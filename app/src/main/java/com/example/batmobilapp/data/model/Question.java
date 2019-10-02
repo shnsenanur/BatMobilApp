@@ -2,9 +2,6 @@ package com.example.batmobilapp.data.model;
 
 import android.graphics.drawable.Drawable;
 
-//Genel kullandıklarımızı tanımlama yeri
-
-
 public class Question {
     private int id;
     private String title;
@@ -12,10 +9,9 @@ public class Question {
 
 
 
-    public Question(int id, String title, Drawable icon, String description) {
+    public Question(int id, String title, String description) {
         this.id = id;
         this.title = title;
-
         this.description = description;
     }
 
@@ -34,7 +30,6 @@ public class Question {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public String getDescription() {
         return description;

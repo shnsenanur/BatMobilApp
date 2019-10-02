@@ -8,15 +8,14 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
-import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.data.model.Question;
+import com.example.batmobilapp.ui.fragment.QuestionDetailFragment;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
+
 import java.util.List;
 
-//Adapterla gerçek soruları çekiyoruz
 
-
-public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Question> itemsData;
     FragmentTransaction fragmentTransaction;
 
@@ -34,7 +33,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        assert getItem(position) != null;
         ((ViewHolder) holder).bind(getItem(position));
     }
 

@@ -42,7 +42,8 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (itemsData != null) {
             return itemsData.get(position);
         }
-        return null;
+        User apo = new User("1","danmarkq",21,"dfsdf");
+        return apo;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -52,12 +53,13 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
-            ivUserPhoto = itemLayoutView.findViewById(R.id.ivUserPhoto);
-            tvUsername = itemLayoutView.findViewById(R.id.tvUsername);
-            tvRate = itemLayoutView.findViewById(R.id.tvRate);
+            ivUserPhoto = itemLayoutView.findViewById(R.id.image_view);
+            tvUsername = itemLayoutView.findViewById(R.id.text_view1);
+            tvRate = itemLayoutView.findViewById(R.id.text_view2);
         }
 
         public void bind(User item) {
+            System.out.println(item.getUsername());
             tvUsername.setText(item.getUsername());
             String rate= String.valueOf(item.getRate())+" Soru cevapladı.";
             tvRate.setText(rate);

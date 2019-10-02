@@ -9,7 +9,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
+import com.example.batmobilapp.ui.fragment.QuestionDetailFragment;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
+
 import java.util.List;
 
 

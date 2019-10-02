@@ -1,6 +1,6 @@
 package com.example.batmobilapp.data.model;
 
-        import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable;
 
 public class Category {
     private int id;

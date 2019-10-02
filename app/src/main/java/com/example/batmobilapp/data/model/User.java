@@ -13,6 +13,7 @@ public class User {
         this.rate = rate;
     }
 
+
     private int rate;
     private String photoUrl;
 

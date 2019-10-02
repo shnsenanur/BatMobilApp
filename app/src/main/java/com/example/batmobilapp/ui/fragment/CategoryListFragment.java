@@ -6,17 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.ui.adapter.CategoryAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +58,6 @@ public class CategoryListFragment extends Fragment {
         categoryAdapter = new CategoryAdapter(categoryList,getFragmentManager().beginTransaction());
         rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvCategory.setAdapter(categoryAdapter);
-
     }
-}
 
+}

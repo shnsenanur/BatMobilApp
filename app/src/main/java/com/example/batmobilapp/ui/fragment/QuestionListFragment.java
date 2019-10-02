@@ -6,13 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.data.model.Question;
@@ -40,12 +38,10 @@ public class QuestionListFragment extends Fragment {
         rvQuestion = view.findViewById(R.id.rvQuestion);
         questionList = new ArrayList<>();
         Resources res = getResources();
-        Drawable sumeyye = res.getDrawable(R.drawable.common_google_signin_btn_icon_dark);
-        questionList.add(new Question(1,"Ulaşım",sumeyye,"5 kişi çözmeye çalışıyor."));
+        questionList.add(new Question(1,"a","b"));
         questionAdapter = new QuestionAdapter(questionList,getFragmentManager().beginTransaction());
         rvQuestion.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvQuestion.setAdapter(questionAdapter);
-
     }
-}
 
+}

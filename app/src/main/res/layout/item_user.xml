@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:layout_marginBottom="4dp"
+    >
 
-    <ImageView
-        android:id="@+id/ivUserPhoto"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:padding="5dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
 
-    <LinearLayout android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="2dp" />
 
         <TextView
-            android:id="@+id/tvUsername"
+            android:id="@+id/text_view1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medium Text"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/image_view"
+            android:text="Line 1"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:padding="2dp"
-            android:textColor="#4d4d4d" />
+            android:layout_toRightOf="@+id/image_view" />
+
         <TextView
-            android:id="@+id/tvRate"
+            android:id="@+id/text_view2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:text="TextView"
-            android:layout_marginLeft="20dp"/>
-    </LinearLayout>
-</LinearLayout>
+            android:layout_below="@+id/text_view1"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/image_view"
+            android:text="Line 2"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/image_view"
+            android:layout_marginLeft="8dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
