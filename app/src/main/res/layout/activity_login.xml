@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,53 +8,54 @@
     android:background="@color/colorPrimary">
 
 
- <EditText
-     android:id="@+id/mail_etext"
-     android:layout_width="204dp"
-     android:layout_height="92dp"
-     android:layout_alignParentBottom="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginTop="300dp"
-     android:layout_marginBottom="400dp"
-     android:hint="E-mailiniz giriniz"
-
-
-     />
-
- <EditText
-     android:id="@+id/password_etext"
-     android:layout_width="213dp"
-     android:layout_height="102dp"
-     android:layout_alignParentBottom="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginTop="400dp"
-     android:layout_marginBottom="309dp"
-     android:hint="Şifrenizi giriniz"
-
-     />
-
- <TextView
-
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_centerHorizontal="true"
-     android:layout_marginTop="40dp"
-     android:layout_marginBottom="240dp"
-     android:text="@string/app_name"
-     android:textColor="@android:color/white"
-     android:textSize="44sp"
-     android:textStyle="bold" />
-    <Button
+    <EditText
+        android:id="@+id/mail_etext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:textColor="@android:color/black"
-        android:text="@string/str_login"
-        android:layout_marginTop="440dp"
-        android:layout_marginBottom="130dp"
-        android:id="@+id/login_btn"
         android:layout_alignParentBottom="true"
-        />
+        android:layout_centerHorizontal="true"
+        android:hint="E-mailiniz giriniz"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/password_etext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/password_etext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Şifrenizi giriniz"
+android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mail_etext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:text="@string/str_login"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/newUser_btn"
+        tools:layout_editor_absoluteX="20dp" />
 
     <Button
         android:id="@+id/newUser_btn"
@@ -62,22 +63,25 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/login_btn"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="440dp"
-        android:layout_marginBottom="75dp"
         android:background="@android:color/white"
         android:text="@string/str_newLogin"
-        android:textColor="@android:color/black" />
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/travel_btn"
+        tools:layout_editor_absoluteX="20dp" />
+
     <Button
         android:id="@+id/travel_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/login_btn"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="440dp"
-        android:layout_marginBottom="20dp"
         android:background="@android:color/white"
         android:text="BİRİNE BAKIP ÇIKACAĞIM"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
