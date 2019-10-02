@@ -1,19 +1,21 @@
 package com.example.batmobilapp.data.model;
 
-        import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable;
 
-public class Category {
+//Genel kullandıklarımızı tanımlama yeri
+
+
+public class Question {
     private int id;
     private String title;
-    private Drawable icon;
     private String description;
 
 
 
-    public Category(int id, String title, Drawable icon, String description) {
+    public Question(int id, String title, Drawable icon, String description) {
         this.id = id;
         this.title = title;
-        this.icon = icon;
+
         this.description = description;
     }
 
@@ -33,13 +35,6 @@ public class Category {
         this.title = title;
     }
 
-    public Drawable getIcon() {
-        return icon;
-    }
-
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
-    }
 
     public String getDescription() {
         return description;

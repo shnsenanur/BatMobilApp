@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
-
 import java.util.List;
+
 
     public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Category> itemsData;
@@ -49,9 +49,9 @@ import java.util.List;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
-            ivCategoryIcon = itemLayoutView.findViewById(R.id.ivCategoryIcon);
-            tvTitle = itemLayoutView.findViewById(R.id.tvTitle);
-            tvSubtitle = itemLayoutView.findViewById(R.id.tvSubtitle);
+            ivCategoryIcon = itemLayoutView.findViewById(R.id.ivUserPhoto);
+            tvTitle = itemLayoutView.findViewById(R.id.tvUsername);
+            tvSubtitle = itemLayoutView.findViewById(R.id.tvRate);
         }
 
         public void bind(Category item) {

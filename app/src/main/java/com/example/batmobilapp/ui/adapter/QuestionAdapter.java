@@ -5,40 +5,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.batmobilapp.R;
-import com.example.batmobilapp.data.model.User;
-import com.example.batmobilapp.ui.fragment.UserListFragment;
-
+import com.example.batmobilapp.data.model.Category;
+import com.example.batmobilapp.data.model.Question;
+import com.example.batmobilapp.ui.fragment.QuestionListFragment;
 import java.util.List;
 
+//Adapterla gerçek soruları çekiyoruz
 
-public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<User> itemsData;
+
+public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private List<Question> itemsData;
     FragmentTransaction fragmentTransaction;
 
-    public UserAdapter(List<User> itemsData, FragmentTransaction fragmentTransaction) {
+    public QuestionAdapter(List<Question> itemsData,FragmentTransaction fragmentTransaction) {
         this.itemsData = itemsData;
-        this.fragmentTransaction = fragmentTransaction;
+        this.fragmentTransaction=fragmentTransaction;
     }
 
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_question, parent, false));
     }
 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        assert getItem(position) != null;
         ((ViewHolder) holder).bind(getItem(position));
     }
 
 
-    private User getItem(int position) {
+    private Question getItem(int position) {
         if (itemsData != null) {
             return itemsData.get(position);
         }
@@ -46,26 +47,23 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView ivUserPhoto;
-        TextView tvUsername;
-        TextView tvRate;
+        TextView tvTitle;
+        TextView tvSubtitle;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
-            ivUserPhoto = itemLayoutView.findViewById(R.id.ivUserPhoto);
-            tvUsername = itemLayoutView.findViewById(R.id.tvUsername);
-            tvRate = itemLayoutView.findViewById(R.id.tvRate);
+            tvTitle = itemLayoutView.findViewById(R.id.tvUsername);
+            tvSubtitle = itemLayoutView.findViewById(R.id.tvRate);
         }
 
-        public void bind(User item) {
-            tvUsername.setText(item.getUsername());
-            String rate= String.valueOf(item.getRate())+" Soru cevapladı.";
-            tvRate.setText(rate);
+        public void bind(Question item) {
+            tvTitle.setText(item.getTitle());
+            tvSubtitle.setText(item.getDescription());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new UserListFragment());
-                    fragmentTransaction.addToBackStack("UserListFragment");
+                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionListFragment());
+                    fragmentTransaction.addToBackStack("QuestionListFragment");
                     fragmentTransaction.commit();
                 }
             });
@@ -79,4 +77,3 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 }
-
