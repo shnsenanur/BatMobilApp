@@ -18,7 +18,7 @@ import java.util.List;
 public class FirebaseService {
 
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    public final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     public void getCategoryList(final IResponseListener<List<Category>> responseListener) {
         final List<Category> categories = new ArrayList<>();
