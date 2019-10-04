@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.ui.fragment.CategoryListFragment;
+import com.example.batmobilapp.ui.fragment.ProfileFragment;
 import com.example.batmobilapp.ui.fragment.UserListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

@@ -60,8 +60,8 @@ import java.util.List;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionListFragment());
-                    fragmentTransaction.addToBackStack("QuestionListFragment");
+                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionDetailFragment());
+                    fragmentTransaction.addToBackStack("QuestionDetailFragment");
                     fragmentTransaction.commit();
                 }
             });

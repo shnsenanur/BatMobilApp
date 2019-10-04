@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.User;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
+import com.example.batmobilapp.ui.fragment.UserFragment;
 import com.example.batmobilapp.ui.fragment.UserListFragment;
 
 import java.util.List;
@@ -67,7 +68,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionListFragment());
+                    fragmentTransaction.replace(R.id.mainFrameLayout, new UserFragment());
                     fragmentTransaction.addToBackStack("QuestionListFragment");
                     fragmentTransaction.commit();
                 }
