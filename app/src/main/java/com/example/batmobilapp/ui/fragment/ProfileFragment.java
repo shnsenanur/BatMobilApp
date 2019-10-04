@@ -46,6 +46,7 @@ public class ProfileFragment extends Fragment implements LocationListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Profil");
         Dexter.withActivity(getActivity())
                 .withPermissions(
                         Manifest.permission.ACCESS_COARSE_LOCATION,

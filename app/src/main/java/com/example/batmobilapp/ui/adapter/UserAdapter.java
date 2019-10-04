@@ -14,17 +14,18 @@ import com.example.batmobilapp.data.model.User;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
 import com.example.batmobilapp.ui.fragment.UserFragment;
 import com.example.batmobilapp.ui.fragment.UserListFragment;
+import com.example.batmobilapp.utils.UserOnItemClickListener;
 
 import java.util.List;
 
 
 public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<User> itemsData;
-    FragmentTransaction fragmentTransaction;
+    UserOnItemClickListener userOnItemClickListener;
 
-    public UserAdapter(List<User> itemsData, FragmentTransaction fragmentTransaction) {
+    public UserAdapter(List<User> itemsData, UserOnItemClickListener userOnItemClickListener) {
         this.itemsData = itemsData;
-        this.fragmentTransaction = fragmentTransaction;
+        this.userOnItemClickListener = userOnItemClickListener;
     }
 
 
@@ -68,9 +69,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new UserFragment().newInstance(item));
-                    fragmentTransaction.addToBackStack("QuestionListFragment");
-                    fragmentTransaction.commit();
+                    userOnItemClickListener.OnItemClick(item);
                 }
             });
         }

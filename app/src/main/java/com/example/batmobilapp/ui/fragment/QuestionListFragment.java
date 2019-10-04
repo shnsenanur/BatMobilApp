@@ -16,11 +16,12 @@ import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.data.model.Question;
 import com.example.batmobilapp.ui.adapter.CategoryAdapter;
 import com.example.batmobilapp.ui.adapter.QuestionAdapter;
+import com.example.batmobilapp.utils.QuestionOnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionListFragment extends Fragment {
+public class QuestionListFragment extends Fragment implements QuestionOnItemClickListener {
 
     RecyclerView rvQuestion;
     List<Question> questionList;
@@ -48,10 +49,18 @@ public class QuestionListFragment extends Fragment {
         rvQuestion = view.findViewById(R.id.rvQuestion);
         questionList = new ArrayList<>();
         Resources res = getResources();
-        questionList.add(new Question(1,"Selam naber","asdfghj sadfg sdfgh"));
-        questionAdapter = new QuestionAdapter(questionList,getFragmentManager().beginTransaction());
+        questionList.add(new Question(1,"Soru Başlığı","Soru Açıklaması ",
+                "cevaplayan kişinin adı","Cevaplanma Tarihi","Cevap İçeriği"));
+        questionAdapter = new QuestionAdapter(questionList,this);
         rvQuestion.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvQuestion.setAdapter(questionAdapter);
     }
 
+    @Override
+    public void OnItemClick(Question question) {
+        new QuestionDetailFragment();
+        getFragmentManager().beginTransaction().replace(R.id.mainFrameLayout,
+                QuestionDetailFragment.newInstance(question))
+        .addToBackStack("QuestionDetailFragment").commit();
+    }
 }

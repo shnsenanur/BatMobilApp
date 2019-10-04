@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(new CategoryListFragment());
@@ -53,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFrameLayout, fragment);
-        transaction.addToBackStack(fragment.getTag());
-        transaction.commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mainFrameLayout, fragment)
+                .addToBackStack(fragment.getTag())
+                .commit();
     }
 
 }

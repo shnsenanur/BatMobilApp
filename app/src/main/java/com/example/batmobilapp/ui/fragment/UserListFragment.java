@@ -15,10 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.User;
 import com.example.batmobilapp.ui.adapter.UserAdapter;
+import com.example.batmobilapp.utils.UserOnItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserListFragment extends Fragment {
+public class UserListFragment extends Fragment implements UserOnItemClickListener {
     RecyclerView rvUser;
     List<User> userList;
     UserAdapter userAdapter;
@@ -33,34 +35,44 @@ public class UserListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Kullanıcılar");
         rvUser = view.findViewById(R.id.rvUser);
         etUsername = view.findViewById(R.id.etUsername);
         userList = new ArrayList<>();
-        userList.add(new User("1","sena",21,""));
-        userList.add(new User("1","sumeyye",21,""));
-        userList.add(new User("1","burcu",21,""));
-        userList.add(new User("1","ayşe",21,""));
-        userAdapter = new UserAdapter(userList,getFragmentManager().beginTransaction());
+        userList.add(new User("1", "sena", 21, ""));
+        userList.add(new User("1", "sumeyye", 21, ""));
+        userList.add(new User("1", "burcu", 21, ""));
+        userList.add(new User("1", "ayşe", 21, ""));
+        userAdapter = new UserAdapter(userList, this);
         rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvUser.setAdapter(userAdapter);
         etUsername.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
-                List<User> filterList=new ArrayList<>();
-                for(User user : userList){
-                    if(user.getUsername().contains(s.toString())){
+                List<User> filterList = new ArrayList<>();
+                for (User user : userList) {
+                    if (user.getUsername().contains(s.toString())) {
                         filterList.add(user);
                     }
                 }
-                userAdapter = new UserAdapter(filterList,getFragmentManager().beginTransaction());
+                userAdapter = new UserAdapter(filterList, UserListFragment.this);
                 rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
                 rvUser.setAdapter(userAdapter);
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
         });
+    }
+
+    @Override
+    public void OnItemClick(User user) {
+        getFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new UserFragment().newInstance(user))
+                .addToBackStack("QuestionListFragment")
+                .commit();
     }
 }
 

@@ -14,10 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.ui.adapter.CategoryAdapter;
+import com.example.batmobilapp.utils.CategoryOnItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryListFragment extends Fragment {
+public class CategoryListFragment extends Fragment implements CategoryOnItemClickListener {
 
     RecyclerView rvCategory;
     List<Category> categoryList;
@@ -56,9 +58,14 @@ public class CategoryListFragment extends Fragment {
         categoryList.add(new Category(2,"Eğitim",sel,"560 kişi bu konu hakkında konuşuyor."));
         categoryList.add(new Category(3,"Siyaset",sena,"900 kişi bu konu hakkında konuşuyor."));
         categoryList.add(new Category(4,"Yazılım",burcu,"40 kişi bu konu hakkında konuşuyor."));
-        categoryAdapter = new CategoryAdapter(categoryList,getFragmentManager().beginTransaction());
+        categoryAdapter = new CategoryAdapter(categoryList,this);
         rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvCategory.setAdapter(categoryAdapter);
     }
 
+    @Override
+    public void OnItemClick(String title) {
+        getFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new QuestionListFragment().newInstance(title))
+                .addToBackStack("QuestionListFragment").commit();
+    }
 }

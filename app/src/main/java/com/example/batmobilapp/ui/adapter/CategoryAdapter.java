@@ -5,23 +5,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentTransaction;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Category;
-import com.example.batmobilapp.ui.fragment.QuestionDetailFragment;
-import com.example.batmobilapp.ui.fragment.QuestionListFragment;
+import com.example.batmobilapp.utils.CategoryOnItemClickListener;
 
 import java.util.List;
 
 
-    public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Category> itemsData;
-    FragmentTransaction fragmentTransaction;
+    CategoryOnItemClickListener adapterOnItemClickListener;
 
-    public CategoryAdapter(List<Category> itemsData,FragmentTransaction fragmentTransaction) {
+    public CategoryAdapter(List<Category> itemsData, CategoryOnItemClickListener adapterOnItemClickListener) {
         this.itemsData = itemsData;
-        this.fragmentTransaction=fragmentTransaction;
+        this.adapterOnItemClickListener = adapterOnItemClickListener;
     }
 
 
@@ -56,16 +56,15 @@ import java.util.List;
             tvSubtitle = itemLayoutView.findViewById(R.id.tvRate);
         }
 
-        public void bind(Category item) {
+        public void bind(final Category item) {
             tvTitle.setText(item.getTitle());
             tvSubtitle.setText(item.getDescription());
             ivCategoryIcon.setImageDrawable(item.getIcon());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionListFragment());
-                    fragmentTransaction.addToBackStack("QuestionListFragment");
-                    fragmentTransaction.commit();
+                    adapterOnItemClickListener.OnItemClick(item.getTitle());
+
                 }
             });
         }

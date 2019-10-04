@@ -5,129 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/Ad_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
-        android:text="Ad"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
 
 
     <EditText
         android:id="@+id/etName"
+        android:padding="15dp"
+        android:layout_marginTop="100dp"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/background_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Adınızı Giriniz" />
 
-    <TextView
-        android:id="@+id/Soyad_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
-        android:text="Soyad"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
 
 
     <EditText
         android:id="@+id/etSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginTop="30dp"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/background_edittext"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:ems="50"
         android:inputType="textPersonName"
         android:hint="Soyadınızı Giriniz" />
 
 
-    <TextView
-        android:id="@+id/Email_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
-        android:ems="50"
-        android:inputType="textEmailAddress"
-        android:text="Email"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
-
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:ems="10"
+        android:textColorHint="@android:color/white"
+        android:padding="15dp"
+        android:background="@drawable/background_edittext"
         android:inputType="textEmailAddress"
         android:hint="Emailinizi Giriniz" />
 
-
-    <TextView
-        android:id="@+id/Şifre_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
-        android:ems="50"
-        android:inputType="textPersonName"
-        android:text="Şifre"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:hint="Şifrenizi Giriniz"
+        android:layout_marginTop="30dp"
         android:ems="50"
+        android:padding="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/background_edittext"
         android:inputType="textPassword" />
 
-    <TextView
-        android:id="@+id/Şifre_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
-        android:ems="50"
-        android:inputType="textPersonName"
-        android:text="Şifre Tekrar"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
+        android:hint="Şifrenizi Yeniden Giriniz"
+        android:textColorHint="@android:color/white"
+        android:padding="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_edittext"
         android:ems="50"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/signUp_btn"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
+        android:background="@drawable/background_button"
         android:text="@string/new_user"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/white" />
 </LinearLayout>

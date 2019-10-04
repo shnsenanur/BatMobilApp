@@ -5,23 +5,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Question;
 import com.example.batmobilapp.ui.fragment.QuestionDetailFragment;
 import com.example.batmobilapp.ui.fragment.QuestionListFragment;
+import com.example.batmobilapp.utils.QuestionOnItemClickListener;
 
 import java.util.List;
 
 
-    public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Question> itemsData;
-    FragmentTransaction fragmentTransaction;
+    QuestionOnItemClickListener questionOnItemClickListener;
 
-    public QuestionAdapter(List<Question> itemsData,FragmentTransaction fragmentTransaction) {
+    public QuestionAdapter(List<Question> itemsData, QuestionOnItemClickListener questionOnItemClickListener) {
         this.itemsData = itemsData;
-        this.fragmentTransaction=fragmentTransaction;
+        this.questionOnItemClickListener = questionOnItemClickListener;
     }
 
 
@@ -60,10 +63,7 @@ import java.util.List;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout,
-                            new QuestionDetailFragment().newInstance(item.getTitle(),item.getId()));
-                    fragmentTransaction.addToBackStack("QuestionDetailFragment");
-                    fragmentTransaction.commit();
+                    questionOnItemClickListener.OnItemClick(item);
                 }
             });
         }

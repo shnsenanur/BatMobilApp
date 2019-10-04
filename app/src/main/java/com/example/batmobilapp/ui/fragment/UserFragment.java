@@ -6,15 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.User;
 
 public class UserFragment extends Fragment {
 
-TextView tvUsername;
+    TextView tvUsername, tvAge;
 
     public static UserFragment newInstance(User user) {
         Bundle args = new Bundle();
@@ -33,12 +35,15 @@ TextView tvUsername;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tvUsername=view.findViewById(R.id.tvUsername);
+        tvUsername = view.findViewById(R.id.tvUsername);
+        tvAge = view.findViewById(R.id.tvAge);
 
         Bundle extras = getArguments();
         if (extras != null) {
-            User user= (User) extras.getParcelable("user");
+            User user = (User) extras.getParcelable("user");
+            getActivity().setTitle(user.getUsername());
             tvUsername.setText(user.getUsername());
+            tvAge.setText(String.valueOf(user.getAge())+" Yaşında");
         }
     }
 }
