@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.batmobilapp.R;
@@ -19,7 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button login_btn, newUser_btn, travel_btn;
+    Button login_btn, newUser_btn;
+    TextView travel_btn;
     EditText mail_etext, password_etext;
     FirebaseAuth firebaseAuth;
 
@@ -28,9 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         firebaseAuth=FirebaseAuth.getInstance();
-        login_btn = findViewById(R.id.login_btn);
-        newUser_btn = findViewById(R.id.newUser_btn);
-        travel_btn = findViewById(R.id.travel_btn);
+        login_btn = findViewById(R.id.btnLogin);
+        newUser_btn = findViewById(R.id.btnRegister);
+        travel_btn = findViewById(R.id.tvTravel);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
-        mail_etext = findViewById(R.id.mail_etext);
-        password_etext = findViewById(R.id.password_etext);
+        mail_etext = findViewById(R.id.et_username);
+        password_etext = findViewById(R.id.et_password);
 
 
     }

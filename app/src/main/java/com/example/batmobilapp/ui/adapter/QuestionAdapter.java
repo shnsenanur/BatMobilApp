@@ -54,13 +54,14 @@ import java.util.List;
             tvSubtitle = itemLayoutView.findViewById(R.id.tvRate);
         }
 
-        public void bind(Question item) {
+        public void bind(final Question item) {
             tvTitle.setText(item.getTitle());
             tvSubtitle.setText(item.getDescription());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new QuestionDetailFragment());
+                    fragmentTransaction.replace(R.id.mainFrameLayout,
+                            new QuestionDetailFragment().newInstance(item.getTitle(),item.getId()));
                     fragmentTransaction.addToBackStack("QuestionDetailFragment");
                     fragmentTransaction.commit();
                 }

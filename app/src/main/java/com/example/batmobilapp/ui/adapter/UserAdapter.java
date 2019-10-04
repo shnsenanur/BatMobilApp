@@ -60,7 +60,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             tvRate = itemLayoutView.findViewById(R.id.text_view2);
         }
 
-        public void bind(User item) {
+        public void bind(final User item) {
             System.out.println(item.getUsername());
             tvUsername.setText(item.getUsername());
             String rate= String.valueOf(item.getRate())+" Soru cevapladı.";
@@ -68,7 +68,7 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    fragmentTransaction.replace(R.id.mainFrameLayout, new UserFragment());
+                    fragmentTransaction.replace(R.id.mainFrameLayout, new UserFragment().newInstance(item));
                     fragmentTransaction.addToBackStack("QuestionListFragment");
                     fragmentTransaction.commit();
                 }

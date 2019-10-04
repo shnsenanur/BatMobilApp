@@ -25,7 +25,13 @@ public class QuestionListFragment extends Fragment {
     RecyclerView rvQuestion;
     List<Question> questionList;
     QuestionAdapter questionAdapter;
-
+    public static QuestionListFragment newInstance(String categoryName) {
+        Bundle args = new Bundle();
+        args.putString("categoryName", categoryName);
+        QuestionListFragment fragment = new QuestionListFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_question_list, container, false);
@@ -35,10 +41,14 @@ public class QuestionListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Bundle extras = getArguments();
+        if (extras != null) {
+            getActivity().setTitle(extras.getString("categoryName")+" Soruları");
+        }
         rvQuestion = view.findViewById(R.id.rvQuestion);
         questionList = new ArrayList<>();
         Resources res = getResources();
-        questionList.add(new Question(1,"a","b"));
+        questionList.add(new Question(1,"Selam naber","asdfghj sadfg sdfgh"));
         questionAdapter = new QuestionAdapter(questionList,getFragmentManager().beginTransaction());
         rvQuestion.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvQuestion.setAdapter(questionAdapter);

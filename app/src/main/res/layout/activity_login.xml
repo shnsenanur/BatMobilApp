@@ -1,87 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="@color/colorPrimary">
+    android:layout_alignParentTop="true"
+    android:gravity="center"
+    android:orientation="vertical">
 
-
-    <EditText
-        android:id="@+id/mail_etext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:hint="E-mailiniz giriniz"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/password_etext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/password_etext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:hint="Şifrenizi giriniz"
-android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/login_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        android:textSize="44sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/mail_etext"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/login_btn"
+    </ImageView>
+
+    <EditText
+        android:id="@+id/et_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        android:text="@string/str_login"
-        android:layout_marginBottom="20dp"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/newUser_btn"
-        tools:layout_editor_absoluteX="20dp" />
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_edittext"
+        android:drawableStart="@mipmap/ic_user"
+        android:drawableLeft="@mipmap/ic_user"
+        android:drawablePadding="16dp"
+        android:hint="Kullanıcı Adı"
+        android:inputType="textEmailAddress"
+        android:padding="5dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/newUser_btn"
+    <EditText
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login_btn"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        android:text="@string/str_newLogin"
-        android:layout_marginBottom="20dp"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/travel_btn"
-        tools:layout_editor_absoluteX="20dp" />
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_edittext"
+        android:drawableStart="@mipmap/ic_password"
+        android:drawableLeft="@mipmap/ic_password"
+        android:drawablePadding="16dp"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
     <Button
-        android:id="@+id/travel_btn"
+        android:id="@+id/btnLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_button"
+        android:text="Giriş Yap"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTravel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <Button
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login_btn"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        android:text="BİRİNE BAKIP ÇIKACAĞIM"
-        android:textColor="@android:color/black"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_button"
+        android:text="Kayıt Ol"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/tvTravel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Giriş Yapmadan Devam Et"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

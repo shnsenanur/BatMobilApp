@@ -32,6 +32,7 @@ public class CategoryListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Anasayfa");
         rvCategory = view.findViewById(R.id.rvCategory);
         categoryList = new ArrayList<>();
         Resources res = getResources();

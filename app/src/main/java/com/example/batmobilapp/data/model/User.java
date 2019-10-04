@@ -1,6 +1,9 @@
 package com.example.batmobilapp.data.model;
 
-public class User {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class User implements Parcelable {
     private String id;
     private String username;
     private int age;
@@ -51,5 +54,15 @@ public class User {
         this.username = username;
         this.age = age;
         this.photoUrl = photoUrl;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }

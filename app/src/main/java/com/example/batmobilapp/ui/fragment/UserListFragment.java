@@ -1,32 +1,20 @@
 package com.example.batmobilapp.ui.fragment;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.batmobilapp.R;
-import com.example.batmobilapp.data.model.Category;
 import com.example.batmobilapp.data.model.User;
-import com.example.batmobilapp.ui.adapter.CategoryAdapter;
 import com.example.batmobilapp.ui.adapter.UserAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
