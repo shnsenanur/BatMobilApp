@@ -1,6 +1,6 @@
 package com.example.batmobilapp.data.model;
 
-public class User {
+public class OtherUsers {
     private String id;
     private String username;
     private int age;
@@ -46,7 +46,7 @@ public class User {
         this.photoUrl = photoUrl;
     }
 
-    public User(String id, String username, int age, String photoUrl) {
+    public OtherUsers(String id, String username, int age, String photoUrl) {
         this.id = id;
         this.username = username;
         this.age = age;
