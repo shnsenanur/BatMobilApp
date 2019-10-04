@@ -3,11 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    tools:ignore="ExtraText">
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/background_white_grey_border_3dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/ic_search"
+        android:hint="Kullanıcı adını giriniz"
+        android:layout_margin="10dp"
+        android:inputType="textPersonName"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUser"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

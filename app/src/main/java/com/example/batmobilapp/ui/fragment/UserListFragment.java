@@ -3,6 +3,8 @@ package com.example.batmobilapp.ui.fragment;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,6 +34,7 @@ public class UserListFragment extends Fragment {
     RecyclerView rvUser;
     List<User> userList;
     UserAdapter userAdapter;
+    EditText etUsername;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,11 +46,33 @@ public class UserListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvUser = view.findViewById(R.id.rvUser);
+        etUsername = view.findViewById(R.id.etUsername);
         userList = new ArrayList<>();
         userList.add(new User("1","sena",21,""));
+        userList.add(new User("1","sumeyye",21,""));
+        userList.add(new User("1","burcu",21,""));
+        userList.add(new User("1","ayşe",21,""));
         userAdapter = new UserAdapter(userList,getFragmentManager().beginTransaction());
         rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvUser.setAdapter(userAdapter);
+        etUsername.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+                List<User> filterList=new ArrayList<>();
+                for(User user : userList){
+                    if(user.getUsername().contains(s.toString())){
+                        filterList.add(user);
+                    }
+                }
+                userAdapter = new UserAdapter(filterList,getFragmentManager().beginTransaction());
+                rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
+                rvUser.setAdapter(userAdapter);
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
     }
 }
 
