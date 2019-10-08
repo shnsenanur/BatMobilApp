@@ -58,8 +58,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public void bind(final Category item) {
             tvTitle.setText(item.getTitle());
+            ivCategoryIcon.setImageResource(R.drawable.ic_dashboard_black_24dp);
             tvSubtitle.setText(item.getDescription());
-            ivCategoryIcon.setImageDrawable(item.getIcon());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

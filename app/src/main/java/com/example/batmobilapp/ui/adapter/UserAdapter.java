@@ -45,8 +45,8 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (itemsData != null) {
             return itemsData.get(position);
         }
-        User apo = new User("1","danmarkq",21,"dfsdf");
-        return apo;
+
+        return null;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -64,8 +64,8 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void bind(final User item) {
             System.out.println(item.getUsername());
             tvUsername.setText(item.getUsername());
-            String rate= String.valueOf(item.getRate())+" Soru cevapladı.";
-            tvRate.setText(rate);
+            //String rate= String.valueOf(item.getRate())+" Soru cevapladı.";
+            //tvRate.setText(rate);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

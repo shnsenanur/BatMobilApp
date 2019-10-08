@@ -24,12 +24,14 @@ public class LoginActivity extends AppCompatActivity {
     TextView travel_btn;
     EditText mail_etext, password_etext;
     FirebaseAuth firebaseAuth;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         firebaseAuth=FirebaseAuth.getInstance();
+        currentUser = firebaseAuth.getCurrentUser();
         login_btn = findViewById(R.id.btnLogin);
         newUser_btn = findViewById(R.id.btnRegister);
         travel_btn = findViewById(R.id.tvTravel);
@@ -54,8 +56,10 @@ public class LoginActivity extends AppCompatActivity {
         });
         mail_etext = findViewById(R.id.et_username);
         password_etext = findViewById(R.id.et_password);
-
-
+        if (currentUser != null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
     }
 
     private void login() {
@@ -67,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Tekrar deneyin", Toast.LENGTH_SHORT).show();
                 }

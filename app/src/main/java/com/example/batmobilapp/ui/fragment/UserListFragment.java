@@ -27,8 +27,7 @@ public class UserListFragment extends Fragment implements UserOnItemClickListene
     EditText etUsername;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_user_list, container, false);
     }
 
@@ -39,13 +38,6 @@ public class UserListFragment extends Fragment implements UserOnItemClickListene
         rvUser = view.findViewById(R.id.rvUser);
         etUsername = view.findViewById(R.id.etUsername);
         userList = new ArrayList<>();
-        userList.add(new User("1", "sena", 21, ""));
-        userList.add(new User("1", "sumeyye", 21, ""));
-        userList.add(new User("1", "burcu", 21, ""));
-        userList.add(new User("1", "ayşe", 21, ""));
-        userAdapter = new UserAdapter(userList, this);
-        rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvUser.setAdapter(userAdapter);
         etUsername.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {

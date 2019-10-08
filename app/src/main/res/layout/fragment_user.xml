@@ -1,104 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_width="match_parent">
 
-    >
-
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@mipmap/ic_user" />
-
-    <TextView
-        android:id="@+id/tvUsername"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tvAge"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="20dp"/>
-
-    <RatingBar
-        android:id="@+id/ratingBar"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:rating="2.0"
-        android:stepSize="2.0" />
-
-    -<TableLayout android:background="#f1f1f1" android:layout_height="wrap_content" android:layout_width="match_parent" android:collapseColumns="1,2" android:layout_marginHorizontal="10dp" android:layout_marginVertical="30dp" android:id="@+id/table">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
 
-    -<TableRow>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_user" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:textStyle="bold" android:text="Name"/>
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:textStyle="bold" android:text="Email"/>
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:textStyle="bold" android:text="Tel"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
 
-</TableRow>
-
-
-    -<TableRow>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginHorizontal="1dp" android:gravity="center" android:layout_weight="1" android:text="Alice" android:layout_marginBottom="1dp"/>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="a@a.com" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="111-111" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
-
-</TableRow>
-
-
-    -<TableRow>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginHorizontal="1dp" android:gravity="center" android:layout_weight="1" android:text="Bob" android:layout_marginBottom="1dp"/>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="b@b.com" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
-
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="222-222" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
-
-</TableRow>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="2.0"
+            android:stepSize="2.0" />
 
 
-    -<TableRow>
+     <ListView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/answersLs"/>
 
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginHorizontal="1dp" android:gravity="center" android:layout_weight="1" android:text="Carey" android:layout_marginBottom="1dp"/>
+    </LinearLayout>
 
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="c@c.com" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
 
-    <TextView android:background="#ffffff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center" android:layout_weight="1" android:text="333-333" android:layout_marginBottom="1dp" android:layout_marginRight="1dp"/>
-
-</TableRow>
-
-</TableLayout>
-
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/switchBtn" android:text="Show Detail" android:onClick="collapseTable" android:layout_gravity="center" android:textAllCaps="false"/>
-
-</LinearLayout>
-
+</ScrollView>

@@ -2,24 +2,31 @@ package com.example.batmobilapp.ui.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.ui.fragment.CategoryListFragment;
 import com.example.batmobilapp.ui.fragment.ProfileFragment;
 import com.example.batmobilapp.ui.fragment.UserListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFragment(new CategoryListFragment());
@@ -46,7 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new ProfileFragment();
                     break;
             }
-            loadFragment(selectedFragment);
+            if (item.getItemId() == R.id.navigation_profile && user == null){
+                Toast.makeText(getApplicationContext(),"Lütfen Giriş Yapınız.",Toast.LENGTH_LONG).show();
+            }
+            else{
+                loadFragment(selectedFragment);
+            }
             return true;
         }
     };

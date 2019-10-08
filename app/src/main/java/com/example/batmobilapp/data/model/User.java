@@ -3,20 +3,31 @@ package com.example.batmobilapp.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class User implements Parcelable {
-    private String id;
-    private String username;
-    private int age;
-    private int rate;
-    private String photoUrl;
+public class User  {
+   private String id;
+   private String username;
+   private int age;
+   private String email;
+   private int userRating;
+   private String image;
 
-    public int getRate() {
-        return rate;
+    public User(String id, String username, int age, String email, int userRating, String image) {
+        this.id = id;
+        this.username = username;
+        this.age = age;
+        this.email = email;
+        this.userRating = userRating;
+        this.image = image;
     }
 
-    public void setRate(int rate) {
-        this.rate = rate;
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getId() {
         return id;
     }
@@ -41,28 +52,19 @@ public class User implements Parcelable {
         this.age = age;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public User(String id, String username, int age, String photoUrl) {
-        this.id = id;
-        this.username = username;
-        this.age = age;
-        this.photoUrl = photoUrl;
+    public int getUserRating() {
+        return userRating;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
+    public void setUserRating(int userRating) {
+        this.userRating = userRating;
     }
 }

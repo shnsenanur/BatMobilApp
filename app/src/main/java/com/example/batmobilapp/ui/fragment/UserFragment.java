@@ -29,7 +29,6 @@ public class UserFragment extends Fragment {
 
     public static UserFragment newInstance(User user) {
         Bundle args = new Bundle();
-        args.putParcelable("user", user);
         UserFragment fragment = new UserFragment();
         fragment.setArguments(args);
         return fragment;
@@ -40,25 +39,7 @@ public class UserFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
-    public void collapseTable(View view) {
-        TableLayout table = table.findViewById(table_flg);
-        Button switchBtn = switchBtn.findViewById(switchBtn);
 
-        // setColumnCollapsed(int columnIndex, boolean isCollapsed)
-        table.setColumnCollapsed(1, table_flg);
-        table.setColumnCollapsed(2, table_flg);
-
-        if (table_flg) {
-            // Close
-            table_flg = false;
-            switchBtn.setText("Show Detail");
-        } else {
-            // Open
-            table_flg = true;
-            switchBtn.setText("Hide Detail");
-        }
-
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

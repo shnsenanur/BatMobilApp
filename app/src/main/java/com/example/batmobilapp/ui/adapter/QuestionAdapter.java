@@ -3,16 +3,12 @@ package com.example.batmobilapp.ui.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.Question;
-import com.example.batmobilapp.ui.fragment.QuestionDetailFragment;
-import com.example.batmobilapp.ui.fragment.QuestionListFragment;
 import com.example.batmobilapp.utils.QuestionOnItemClickListener;
 
 import java.util.List;
@@ -59,7 +55,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public void bind(final Question item) {
             tvTitle.setText(item.getTitle());
-            tvSubtitle.setText(item.getDescription());
+            tvSubtitle.setText(item.getDescreption());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
