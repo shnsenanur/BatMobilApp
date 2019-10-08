@@ -11,6 +11,9 @@ public class User  {
    private int userRating;
    private String image;
 
+    public User() {
+    }
+
     public User(String id, String username, int age, String email, int userRating, String image) {
         this.id = id;
         this.username = username;

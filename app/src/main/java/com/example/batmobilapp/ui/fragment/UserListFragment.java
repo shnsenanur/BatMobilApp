@@ -16,6 +16,9 @@ import com.example.batmobilapp.R;
 import com.example.batmobilapp.data.model.User;
 import com.example.batmobilapp.ui.adapter.UserAdapter;
 import com.example.batmobilapp.utils.UserOnItemClickListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,8 @@ public class UserListFragment extends Fragment implements UserOnItemClickListene
     List<User> userList;
     UserAdapter userAdapter;
     EditText etUsername;
+    FirebaseAuth auth;
+    DatabaseReference rf;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,6 +43,8 @@ public class UserListFragment extends Fragment implements UserOnItemClickListene
         rvUser = view.findViewById(R.id.rvUser);
         etUsername = view.findViewById(R.id.etUsername);
         userList = new ArrayList<>();
+        auth = FirebaseAuth.getInstance();
+        rf = FirebaseDatabase.getInstance().getReference().child("users");
         etUsername.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {

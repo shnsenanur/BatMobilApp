@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".data.model.apoland"></activity>
+        <activity android:name=".ui.activity.QuestionDetail"/>
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/title_activity_main_page"></activity>
